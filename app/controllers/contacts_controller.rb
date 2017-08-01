@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
     def create
        @contact = Contact.new(contact_params) 
         
-        if @contact.save
+        if @contact.save#params[:][:] to access forms
             name = params[:contact][:name]
             email = params[:contact][:email]
             body = params[:contact][:comments]
